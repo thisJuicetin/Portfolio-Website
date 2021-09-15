@@ -1,4 +1,4 @@
-import { Box, makeStyles, Typography } from "@material-ui/core";
+import { Box, makeStyles, Typography, Fade } from "@material-ui/core";
 import React from "react";
 import cartoonProfilePic from "./../assets/cartoon-profile.jpg";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
@@ -48,23 +48,25 @@ const Home = () => {
   const classes = useStyles();
   return (
     <section id="home">
-      <Box className={classes.container}>
-        <Box className={classes.textArea}>
-          <Typography variant="h3">Hi, I’m Justin. 👋</Typography>
-          <Typography variant="body1">
-            I’m a recent grad from CSU, Long Beach. 🎓
-          </Typography>
-          <Typography variant="body1">
-            I enjoy programming and am interested in application and software
-            development. 🖥️
-          </Typography>
+      <Fade in={true} timeout={1000}>
+        <Box className={classes.container}>
+          <Box className={classes.textArea}>
+            <Typography variant="h3">Hi, I’m Justin. 👋</Typography>
+            <Typography variant="body1">
+              I’m a recent grad from CSU, Long Beach. 🎓
+            </Typography>
+            <Typography variant="body1">
+              I enjoy programming and am interested in application and software
+              development. 🖥️
+            </Typography>
+          </Box>
+          <img
+            className={classes.cartoonImg}
+            src={cartoonProfilePic}
+            alt="Cartoon Justin"
+          />
         </Box>
-        <img
-          className={classes.cartoonImg}
-          src={cartoonProfilePic}
-          alt="Cartoon Justin"
-        />
-      </Box>
+      </Fade>
       <Box className={classes.iconContainer}>
         <Link to="projects" spy={true} smooth={true} duration={1000}>
           <ExpandMoreIcon className={classes.icon} />
