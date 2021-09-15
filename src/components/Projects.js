@@ -168,7 +168,9 @@ const Project = (props) => {
       {fullCard ? (
         <FullCard />
       ) : (
-        <Typography variant="h4">{props.title}</Typography>
+        <Box style={{ width: "95%" }}>
+          <Typography variant="h4">{props.title}</Typography>
+        </Box>
       )}
     </Box>
   );
