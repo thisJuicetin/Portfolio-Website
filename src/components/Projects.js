@@ -1,5 +1,5 @@
 import { Box, makeStyles, Typography } from "@material-ui/core";
-import React from "react";
+import React, { useState } from "react";
 
 const useStyles = makeStyles({
   container: {
@@ -42,28 +42,134 @@ const useStyles = makeStyles({
       gridColumn: "unset",
     },
   },
+  fullCard: {
+    width: "100%",
+    height: "100%",
+    borderRadius: "16px",
+    backgroundColor: "rgba(17, 17, 17, 0.8)",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  innerCard: { width: "95%", color: "#f8f8ff" },
+  innerContainer: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    flexWrap: "wrap",
+  },
+  skill: {
+    padding: "8px",
+    borderRadius: "16px",
+    color: "black",
+    margin: "4px",
+  },
+  projectLink: {
+    padding: "8px",
+    borderRadius: "4px",
+    backgroundColor: "#ff7171",
+    color: "#f8f8ff",
+    margin: "4px",
+    "&:hover": {
+      cursor: "pointer",
+      backgroundColor: "#f8f8ff",
+      color: "#ff7171",
+    },
+  },
 });
 
 const Project = (props) => {
   const classes = useStyles();
-  if (props.long)
+  const skills = props.skills ? props.skills : [];
+  const [fullCard, setFullCard] = useState(false);
+  const toggleCard = () => {
+    setFullCard(!fullCard);
+  };
+  const openWebPage = (url) => {
+    window.open(url);
+  };
+
+  const FullCard = () => {
     return (
-      <Box
-        className={`${classes.project} ${classes.longProject}`}
-        style={{ backgroundColor: `${props.bgColor}` }}
-      >
-        <Typography variant="h4">{props.children}</Typography>
+      <Box className={classes.fullCard}>
+        <Box className={classes.innerCard}>
+          <Typography
+            variant="h5"
+            style={{ textDecoration: "underline" }}
+            gutterBottom
+          >
+            {props.title}
+          </Typography>
+          <Typography variant="body1">{props.description}</Typography>
+
+          <Box
+            className={classes.innerContainer}
+            style={{ paddingBottom: "16px" }}
+          >
+            {skills.map((text) => {
+              return (
+                <Typography
+                  variant="body2"
+                  className={classes.skill}
+                  style={{ backgroundColor: `${props.bgColor}` }}
+                  key={props.title + " " + text}
+                >
+                  {text}
+                </Typography>
+              );
+            })}
+          </Box>
+          <Box className={classes.innerContainer}>
+            {props.live ? (
+              <Typography
+                variant="body2"
+                className={classes.projectLink}
+                onClick={() => {
+                  openWebPage(props.live);
+                }}
+              >
+                View Live
+              </Typography>
+            ) : (
+              ""
+            )}
+            {props.github ? (
+              <Typography
+                variant="body2"
+                className={classes.projectLink}
+                onClick={() => {
+                  openWebPage(props.github);
+                }}
+              >
+                GitHub
+              </Typography>
+            ) : (
+              ""
+            )}
+          </Box>
+        </Box>
       </Box>
     );
-  else
-    return (
-      <Box
-        className={classes.project}
-        style={{ backgroundColor: `${props.bgColor}` }}
-      >
-        <Typography variant="h4">{props.children}</Typography>
-      </Box>
-    );
+  };
+
+  return (
+    <Box
+      className={
+        props.long
+          ? `${classes.project} ${classes.longProject}`
+          : classes.project
+      }
+      onClick={toggleCard}
+      style={{ backgroundColor: `${props.bgColor}` }}
+    >
+      {fullCard ? (
+        <FullCard />
+      ) : (
+        <Typography variant="h4">{props.title}</Typography>
+      )}
+    </Box>
+  );
 };
 
 const Projects = () => {
@@ -73,14 +179,37 @@ const Projects = () => {
       <Box className={classes.container}>
         <Typography variant="h3">⭐ Projects ⭐</Typography>
         <Box className={classes.wrapper}>
-          <Project long bgColor="aliceblue">
-            Android Social Media App
-          </Project>
-          <Project bgColor="#f6f0ff">Open Weather</Project>
-          <Project bgColor="#e9ffff">Motivational Quotes</Project>
-          <Project long bgColor="#f8f8ff">
-            P2P File Synchronization App
-          </Project>
+          <Project
+            long
+            bgColor="aliceblue"
+            title="Android Social Media App"
+            description="An Android App that lets you schedule hangouts and communicate with other users in real time."
+            skills={["Android Studio", "APIs", "Google Firebase"]}
+          />
+          <Project
+            bgColor="#f6f0ff"
+            title="Open Weather"
+            description="A Single Page Application to view weather information for multiple cities."
+            skills={["React", "Material UI", "CSS3", "APIs"]}
+            live="https://minimal-weather-app.netlify.app/"
+            github="https://github.com/JTMabutas17/Weather-App"
+          />
+          <Project
+            bgColor="#e9ffff"
+            title="Motivational Quotes"
+            description="A Single Page Application to view motivational quotes!"
+            skills={["React", "Material UI", "CSS3", "APIs"]}
+            live="https://motivational-quote-app.netlify.app/"
+            github="https://github.com/JTMabutas17/Motivational-Quote-App"
+          />
+          <Project
+            long
+            bgColor="#f8f8ff"
+            title="P2P File Synchronization App"
+            description="Peer-to-Peer terminal application to synchronize files with clients in your network."
+            skills={["Python3", "Sockets", "Threads", "Distributed Systems"]}
+            github="https://github.com/JTMabutas17/Peer-to-Peer-File-Synchronization-Terminal-Application"
+          />
         </Box>
       </Box>
     </section>
