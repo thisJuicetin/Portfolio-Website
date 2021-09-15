@@ -183,16 +183,17 @@ const Projects = () => {
         <Box className={classes.wrapper}>
           <Project
             long
-            bgColor="aliceblue"
-            title="Android Social Media App"
-            description="An Android App that lets you schedule hangouts and communicate with other users in real time."
-            skills={["Android Studio", "APIs", "Google Firebase"]}
+            bgColor="#f8f8ff"
+            title="P2P File Synchronization App"
+            description="Peer-to-Peer terminal application to synchronize files with clients in your network."
+            skills={["Python3", "Sockets", "Threads", "Distributed Systems"]}
+            github="https://github.com/JTMabutas17/Peer-to-Peer-File-Synchronization-Terminal-Application"
           />
           <Project
             bgColor="#f6f0ff"
             title="Open Weather"
             description="A Single Page Application to view weather information for multiple cities."
-            skills={["React", "Material UI", "CSS3", "APIs"]}
+            skills={["React", "Material UI", "APIs"]}
             live="https://minimal-weather-app.netlify.app/"
             github="https://github.com/JTMabutas17/Weather-App"
           />
@@ -200,17 +201,17 @@ const Projects = () => {
             bgColor="#e9ffff"
             title="Motivational Quotes"
             description="A Single Page Application to view motivational quotes!"
-            skills={["React", "Material UI", "CSS3", "APIs"]}
+            skills={["React", "Material UI", "APIs"]}
             live="https://motivational-quote-app.netlify.app/"
             github="https://github.com/JTMabutas17/Motivational-Quote-App"
           />
           <Project
             long
-            bgColor="#f8f8ff"
-            title="P2P File Synchronization App"
-            description="Peer-to-Peer terminal application to synchronize files with clients in your network."
-            skills={["Python3", "Sockets", "Threads", "Distributed Systems"]}
-            github="https://github.com/JTMabutas17/Peer-to-Peer-File-Synchronization-Terminal-Application"
+            bgColor="aliceblue"
+            title="Android Social Media App"
+            description="An Android App that lets you schedule hangouts and communicate with other users in real time."
+            skills={["Android Studio", "APIs", "Google Firebase"]}
+            github="https://github.com/JTMabutas17/Android-Social-Media-App"
           />
         </Box>
       </Box>
