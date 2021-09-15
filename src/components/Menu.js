@@ -47,9 +47,23 @@ const Menu = () => {
   const toggleMenu = () => {
     setVisible(visible === false ? true : false);
   };
+  const openWebPage = (url) => {
+    window.open(url);
+  };
   const Option = (props) => {
     return (
-      <Typography variant={props.component} gutterBottom={props.gutterBottom}>
+      <Typography
+        variant={props.component}
+        gutterBottom={props.gutterBottom}
+        className={classes.optionLink}
+        onClick={
+          props.url
+            ? () => {
+                openWebPage(props.url);
+              }
+            : ""
+        }
+      >
         {props.children}
       </Typography>
     );
@@ -84,7 +98,6 @@ const Menu = () => {
                 smooth={true}
                 duration={1000}
                 onClick={toggleMenu}
-                className={classes.optionLink}
               >
                 Home
               </SmoothScroll>
@@ -96,7 +109,6 @@ const Menu = () => {
                 smooth={true}
                 duration={1000}
                 onClick={toggleMenu}
-                className={classes.optionLink}
               >
                 Projects
               </SmoothScroll>
@@ -108,7 +120,6 @@ const Menu = () => {
                 smooth={true}
                 duration={1000}
                 onClick={toggleMenu}
-                className={classes.optionLink}
               >
                 About Me
               </SmoothScroll>
@@ -117,32 +128,26 @@ const Menu = () => {
           <Box>
             <Option to="about" component="h4">
               <RouterLink
-                className={classes.optionLink}
                 to="/resume"
                 target="_blank"
+                className={classes.optionLink}
               >
                 Resume
               </RouterLink>
             </Option>
-            <Option to="about" component="h4">
-              <a
-                className={classes.optionLink}
-                href="https://github.com/JTMabutas17"
-                target="_blank"
-                rel="noreferrer"
-              >
-                GitHub
-              </a>
+            <Option
+              to="about"
+              component="h4"
+              url="https://github.com/JTMabutas17"
+            >
+              GitHub
             </Option>
-            <Option to="about" component="h4">
-              <a
-                className={classes.optionLink}
-                href="https://www.linkedin.com/in/justin-mabutas-62b592188/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                LinkedIn
-              </a>
+            <Option
+              to="about"
+              component="h4"
+              url="https://www.linkedin.com/in/justin-mabutas-62b592188/"
+            >
+              LinkedIn
             </Option>
           </Box>
         </Box>

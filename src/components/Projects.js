@@ -35,6 +35,9 @@ const useStyles = makeStyles({
     textAlign: "center",
     borderRadius: "16px",
     boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.25)",
+    "&:hover": {
+      cursor: "pointer",
+    },
   },
   longProject: {
     gridColumn: "span 2",
@@ -72,7 +75,6 @@ const useStyles = makeStyles({
     color: "#f8f8ff",
     margin: "4px",
     "&:hover": {
-      cursor: "pointer",
       backgroundColor: "#f8f8ff",
       color: "#ff7171",
     },
