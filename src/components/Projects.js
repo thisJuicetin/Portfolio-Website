@@ -1,5 +1,6 @@
 import { Box, makeStyles, Typography } from "@material-ui/core";
 import React, { useState } from "react";
+import { COLORS } from "../constants";
 
 const useStyles = makeStyles({
   container: {
@@ -7,7 +8,7 @@ const useStyles = makeStyles({
     alignItems: "center",
     flexDirection: "column",
     width: "100%",
-    backgroundColor: "white",
+    backgroundColor: COLORS.projectsBackground,
     paddingTop: "32px",
     paddingBottom: "32px",
   },
@@ -49,13 +50,13 @@ const useStyles = makeStyles({
     width: "100%",
     height: "100%",
     borderRadius: "16px",
-    backgroundColor: "rgba(17, 17, 17, 0.8)",
+    backgroundColor: COLORS.projectFocus,
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
   },
-  innerCard: { width: "95%", color: "#f8f8ff" },
+  innerCard: { width: "95%", color: COLORS.text3 },
   innerContainer: {
     display: "flex",
     justifyContent: "center",
@@ -71,12 +72,12 @@ const useStyles = makeStyles({
   projectLink: {
     padding: "8px",
     borderRadius: "4px",
-    backgroundColor: "#ff7171",
-    color: "#f8f8ff",
+    backgroundColor: COLORS.projectBtnLink,
+    color: COLORS.text3,
     margin: "4px",
     "&:hover": {
-      backgroundColor: "#f8f8ff",
-      color: "#ff7171",
+      backgroundColor: COLORS.text3,
+      color: COLORS.projectBtnLink,
     },
   },
 });

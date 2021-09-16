@@ -2,6 +2,7 @@ import { Box, makeStyles, Typography } from "@material-ui/core";
 import { Link as RouterLink } from "react-router-dom";
 import React from "react";
 import profilePic from "./../assets/profile-pic.jpg";
+import { COLORS } from "../constants";
 
 const useStyles = makeStyles({
   container: {
@@ -9,7 +10,7 @@ const useStyles = makeStyles({
     alignItems: "center",
     justifyContent: "center",
     width: "100%",
-    backgroundColor: "#f8f8ff",
+    backgroundColor: COLORS.aboutBackground,
     paddingTop: "32px",
     paddingBottom: "32px",
     [`@media (orientation: portrait)`]: { flexDirection: "column" },
@@ -19,7 +20,7 @@ const useStyles = makeStyles({
     flexDirection: "column",
     padding: "16px",
     maxWidth: "700px",
-    "& p": { color: "#555555", paddingBottom: "16px", fontSize: "20px" },
+    "& p": { color: COLORS.text2, paddingBottom: "16px", fontSize: "20px" },
   },
   cartoonImg: {
     width: "200px",
@@ -28,7 +29,7 @@ const useStyles = makeStyles({
     boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.25)",
   },
   resumeLink: {
-    color: "black",
+    color: COLORS.resumeLink,
   },
 });
 

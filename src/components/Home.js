@@ -3,9 +3,11 @@ import React from "react";
 import cartoonProfilePic from "./../assets/cartoon-profile.jpg";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { Link } from "react-scroll";
+import { COLORS } from "../constants.js";
 
 const useStyles = makeStyles({
   container: {
+    backgroundColor: COLORS.homeBackground,
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
@@ -18,8 +20,8 @@ const useStyles = makeStyles({
     flexDirection: "column",
     padding: "16px",
     maxWidth: "500px",
-    "& h3": { color: "#707EFF", paddingBottom: "16px" },
-    "& p": { color: "#555555", paddingBottom: "16px", fontSize: "20px" },
+    "& h3": { color: COLORS.primary, paddingBottom: "16px" },
+    "& p": { color: COLORS.text2, paddingBottom: "16px", fontSize: "20px" },
   },
   cartoonImg: {
     width: "200px",

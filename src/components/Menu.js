@@ -4,6 +4,7 @@ import { Box, makeStyles, Slide, Typography } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 import CloseIcon from "@material-ui/icons/Close";
 import { Link as SmoothScroll } from "react-scroll";
+import { COLORS } from "../constants";
 
 const useStyles = makeStyles({
   menuIcon: {
@@ -18,25 +19,24 @@ const useStyles = makeStyles({
       cursor: "pointer",
     },
   },
-  options: {
+  menu: {
     position: "fixed",
     width: "100%",
     height: "100vh",
     zIndex: "3",
-    backgroundColor: "#707EFF",
+    backgroundColor: COLORS.primary,
     textAlign: "center",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
     flexDirection: "column",
-    color: "white",
   },
-  optionLink: {
+  option: {
     textDecoration: "unset",
-    color: "white",
+    color: COLORS.menuOption,
     "&:hover": {
       cursor: "pointer",
-      color: "#fff170",
+      color: COLORS.optionHighlight,
     },
   },
 });
@@ -55,7 +55,7 @@ const Menu = () => {
       <Typography
         variant={props.component}
         gutterBottom={props.gutterBottom}
-        className={classes.optionLink}
+        className={classes.option}
         onClick={
           props.url
             ? () => {
@@ -75,7 +75,7 @@ const Menu = () => {
           <CloseIcon
             className={classes.menuIcon}
             onClick={toggleMenu}
-            style={{ color: "white" }}
+            style={{ color: COLORS.menuOption }}
           />
         ) : (
           <MenuIcon className={classes.menuIcon} onClick={toggleMenu} />
@@ -83,10 +83,10 @@ const Menu = () => {
       </Box>
 
       <Slide direction="down" in={visible}>
-        <Box className={classes.options}>
+        <Box className={classes.menu}>
           <Box
             style={{
-              borderBottom: "2px solid white",
+              borderBottom: "2px solid " + COLORS.menuOption,
               marginBottom: "16px",
               paddingBottom: "16px",
             }}
@@ -130,7 +130,7 @@ const Menu = () => {
               <RouterLink
                 to="/resume"
                 target="_blank"
-                className={classes.optionLink}
+                className={classes.option}
               >
                 Resume
               </RouterLink>

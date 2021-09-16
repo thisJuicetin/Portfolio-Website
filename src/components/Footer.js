@@ -3,13 +3,15 @@ import React from "react";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import EmailIcon from "@material-ui/icons/Email";
+import { COLORS } from "../constants";
+
 const useStyles = makeStyles({
   container: {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
     width: "100%",
-    backgroundColor: "#f8f8ff",
+    backgroundColor: COLORS.footerBackground,
     paddingTop: "16px",
     paddingBottom: "16px",
   },
@@ -19,7 +21,7 @@ const useStyles = makeStyles({
     width: "100px",
   },
   link: {
-    color: "black",
+    color: COLORS.footerLink,
   },
 });
 const Footer = () => {
