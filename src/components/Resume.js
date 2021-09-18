@@ -1,6 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core";
-import pdfFile from "../assets/JustinMabutas_Resume_2021_v1.2.1.pdf";
+import pdfFile from "../assets/CurrentResume.pdf";
 
 const useStyles = makeStyles({
   container: {
