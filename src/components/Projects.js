@@ -193,6 +193,14 @@ const Projects = () => {
             github="https://github.com/JTMabutas17/Peer-to-Peer-File-Synchronization-Terminal-Application"
           />
           <Project
+            bgColor="#ffcec4"
+            title="News App"
+            description="A Single Page Application to search for relevant news articles based on topic."
+            skills={["React", "Material UI", "APIs"]}
+            live="https://salmon-news-app.netlify.app/"
+            github="https://github.com/JTMabutas17/News-App"
+          />
+          <Project
             bgColor="#f6f0ff"
             title="Open Weather"
             description="A Single Page Application to view weather information for multiple cities."
@@ -209,7 +217,6 @@ const Projects = () => {
             github="https://github.com/JTMabutas17/Motivational-Quote-App"
           />
           <Project
-            long
             bgColor="aliceblue"
             title="Android Social Media App"
             description="An Android App that lets you schedule hangouts and communicate with other users in real time."
