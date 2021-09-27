@@ -184,7 +184,7 @@ const Projects = () => {
       <Box className={classes.container}>
         <Typography variant="h3">⭐ Projects ⭐</Typography>
         <Typography variant="subtitle1">
-          👆 Click a card to see more 👆
+          👇 Click a card to see more 👇
         </Typography>
         <Box className={classes.wrapper}>
           <Project
